@@ -2,11 +2,12 @@ import { Route, Routes, useParams } from "solid-app-router";
 import Home from "./Pages/Home";
 import SinglePost from "./Pages/post/[id]";
 import TagedPosts from "./Pages/tag/[tag]";
-import { createResource } from "solid-js";
+import { createResource, Show } from "solid-js";
 import { client } from "./Utils/fetch";
 import Tags from "./Pages/tag";
 import Layout from "./Layout";
 import PageNotFound from "./Layout/PageNotFound";
+import { Modal, searchStore } from "./components/Search";
 
 function getTags({ params, location, navigate, data }) {
   const [tags] = createResource(() =>
@@ -56,6 +57,7 @@ query {
 function App() {
   return (
     <div>
+       
       <Routes>
         <Route path="/" element={Home} />
         <Route path="/post" element={Home} />

@@ -7,11 +7,10 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div>
-          {searchStore.searchString}
-          <Show when={searchStore.searchString}>
-            <Modal />
-          </Show>
+      
+          <div>
+          
+          
           {/* <SearchResults/> */}
           <PostGrid />
         </div>

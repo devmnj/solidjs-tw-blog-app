@@ -1,5 +1,6 @@
 import { createResource, For, Show } from "solid-js";
 import { GridSkelton, Skelton } from "../../components/Loading";
+import { searchStore } from "../../components/Search";
 import Layout from "../../Layout";
 import { client } from "../../Utils/fetch";
 function RelatedPosts(props) {
@@ -22,7 +23,7 @@ function RelatedPosts(props) {
         return data.data.posts && data.data.posts;
       })
   );
-
+  searchStore.searchString="";
   return (
     <>
       <ul className="ml-4 space-y-1 list-disc">

@@ -1,6 +1,7 @@
 import { createResource, Show, For, createEffect } from "solid-js";
 import { client } from "../Utils/fetch";
 import { GridSkelton, Skelton } from "./Loading";
+import { Modal, searchStore } from "./Search";
 function Author(props) {
   return (
     <>
@@ -77,7 +78,7 @@ function Featured(props) {
   );
 }
 export default function PostGrid() {
-  const [posts3] = createResource(() =>
+  const [posts3,refetch] = createResource(() =>
     client
       .query(
         `
@@ -97,19 +98,22 @@ export default function PostGrid() {
       .toPromise()
       .then((data) => {
         return data.data.posts;
+      }).catch(e=>{
+        console.log('Refetch may fix the error!!');
+        refetch();
       })
   );
 
   createEffect(( )=>{
     if(posts3==undefined){
       console.log('Need to refetch !!');
+      refetch();
     }
   })
  
   return (
     <>
-      <section className=" dark:bg-gray-800 dark:text-gray-100">
-     
+      <section className=" dark:bg-gray-800 dark:text-gray-100">       
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <span class="  ">
             <Featured />

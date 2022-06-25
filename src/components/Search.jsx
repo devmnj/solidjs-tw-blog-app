@@ -94,6 +94,13 @@ query  {
     }
   });
 
+   const handleEvent=(event)=>{
+   
+      if (event.key==='Escape'){
+       console.log('Esc pressed');  
+       searchStore.searchString="";
+      }
+   }
   return (
     <>
       <div
@@ -102,7 +109,7 @@ query  {
       ></div>
       
       {/* <!--modal content--> */}
-      <div class="relative top-20  mx-auto p-5   w-2/6 shadow-lg rounded-md bg-gray-800 text-white overflow-auto">
+      <div class="absolute  top-20 left-3 mx-auto p-5   w-2/6 shadow-lg rounded-md bg-gray-800 text-white overflow-auto">
         <div class="mt-1 text-left">
           <div class=" flex  bg-gray-700 px-1 pt-1 pb-1 w-full   rounded-sm">
             <svg
@@ -121,6 +128,7 @@ query  {
             </svg>
             <input
               ref={searchBox}
+              onKeyDown={handleEvent}              
               value={searchStore.searchString}
               onInput={(e) => searchStore.searchString= e.currentTarget.value}
               class="dark:focus:border-gray-300 focus:outline-none focus:border-gray-600 my-1 mx-1 bg-gray-700 w-full"
