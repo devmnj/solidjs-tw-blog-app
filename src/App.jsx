@@ -7,7 +7,6 @@ import { client } from "./Utils/fetch";
 import Tags from "./Pages/tag";
 import Layout from "./Layout";
 import PageNotFound from "./Layout/PageNotFound";
-import { Modal, searchStore } from "./components/Search";
 
 function getTags({ params, location, navigate, data }) {
   const [tags] = createResource(() =>
@@ -56,8 +55,7 @@ query {
 
 function App() {
   return (
-    <div>
-       
+    <div>       
       <Routes>
         <Route path="/" element={Home} />
         <Route path="/post" element={Home} />

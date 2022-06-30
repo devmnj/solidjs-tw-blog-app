@@ -142,26 +142,10 @@ query  {
               <Show when={posts()?.length>0}>
                 <For each={posts()}>{(post) => <SearchItem path={`/posts/${post.id}`} caption={post.title} />}</For>
                 <p class="bg-gray-800 text-gray-500">I found the above list for you !</p>
-              </Show>
-              
+              </Show>    
              
             </ul>
-          </div>
-
-          {/* <h3 class="text-lg leading-6 font-medium ">Successful!</h3>
-		<div class="mt-2  py-3">
-			<p class="text-sm text-gray-100">
-				Account has been successfully registered!
-			</p>
-		</div>
-		<div class="items-center px-4 py-3">
-			<button
-				id="ok-btn"
-				class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
-			>
-				OK
-			</button>
-		</div> */}
+          </div> 
         </div>
       </div>
     </>

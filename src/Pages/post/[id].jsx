@@ -49,9 +49,9 @@ function RelatedPosts(props) {
 function PostComment(props) {
   return (
     <>
-      <div class="ml-1 space-y-1 ">
-        <div class="text-green-700 font-bold">By Artis</div>
-        <div class="px-3 "> {props.comment}</div>
+      <div className="ml-1 space-y-1 ">
+        <div className="text-green-700 font-bold">By Artis</div>
+        <div className="px-3 "> {props.comment}</div>
       </div>
     </>
   );
@@ -161,7 +161,7 @@ export default function SinglePost(props) {
   return (
     <>
       <Layout>
-        <Show when={myPost()}  fallback={()=><span class=""><GridSkelton/></span>}>
+        <Show when={myPost()}  fallback={()=><span className=""><GridSkelton/></span>}>
           {<Post post={myPost()} fallback={<div>I am looking for it</div>} />}
         </Show>
       </Layout>{" "}

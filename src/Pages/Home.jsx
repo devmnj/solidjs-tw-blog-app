@@ -7,11 +7,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-      
-          <div>
-          
-          
-          {/* <SearchResults/> */}
+        <div>
           <PostGrid />
         </div>
       </Layout>

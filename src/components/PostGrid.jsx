@@ -104,12 +104,12 @@ export default function PostGrid() {
       })
   );
 
-  createEffect(( )=>{
-    if(posts3==undefined){
-      console.log('Need to refetch !!');
-      refetch();
-    }
-  })
+  // createEffect(( )=>{
+  //   if(posts3==undefined){
+  //     console.log('Need to refetch !!');
+  //     refetch();
+  //   }
+  // })
  
   return (
     <>
